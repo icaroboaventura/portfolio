@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'arvo-regular';
+    src: url(/public/fonts/Arvo/Arvo-Regular.ttf);
+  }
+  @font-face {
+    font-family: 'arvo-bold';
+    src: url(/public/fonts/Arvo/Arvo-Bold.ttf);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
