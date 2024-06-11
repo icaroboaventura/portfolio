@@ -5,6 +5,7 @@ import MenuIcon from './MenuIcon'
 import { ActiveSectionContext, ToggleContext } from '../../context/Context'
 import MenuDropDown from './MenuDropDown'
 import { scrollToSection } from '../../utils/function'
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -47,26 +48,33 @@ const Navbar = () => {
       <div
         className={`w-ful h-12 px-4 flex justify-between items-center bg-white ${scrolled ? 'scrolled' : ''}`}>
         <Link
-          className="font-arvo-bold text-secondary text-xs"
+          className=" font-opensans-bold-italic text-secondary text-xs"
           to="/"
           onClick={() => {
             scrollToSection('Home')
           }}>
-          Icaro <span className="text-primary">Boaventura</span>
+          ICARO <span className="text-primary">BOAVENTURA</span>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-1 rounded">
-          {navLinks.map((link, i) => (
+
+        <ul className="hidden sm:flex flex-row gap-0 ">
+          {navLinks.map(link => (
             <li
+              key={link.name}
+              onClick={() => setActiveSection(link.name)}
               className={`${
                 activeSection === link.name ?
-                  ' text-tertiary bg-primary'
-                : 'text-primary '
-              }  cursor-pointer w-20 text-center  p-1 rounded `}
-              key={i}
-              onClick={() => {
-                scrollToSection(link.name)
-              }}>
-              <Link to={'/'}>{link.name}</Link>
+                  ' text-secondary'
+                : 'text-primary hover:scale-105'
+              }  transition-colors px-2.5 py-0.5 text-sm relative font-opensans-bold`}>
+              <span className="relative text-center z-10 cursor-pointer">
+                {link.name}
+              </span>
+              {activeSection === link.name ?
+                <motion.span
+                  layoutId="pill-tab"
+                  transition={{ type: 'spring', duration: 0.5 }}
+                  className="absolute w-1 inset-0 z-0 bg-secondary "></motion.span>
+              : ''}
             </li>
           ))}
         </ul>

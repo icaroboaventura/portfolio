@@ -15,7 +15,7 @@ function App() {
       <ActiveSectionContext.Provider
         value={{ activeSection, setActiveSection }}>
         <BrowserRouter>
-          <div className="font-arvo-regular relative bg-tertiary">
+          <div className="relative font-opensans-regular">
             <Navbar />
             <Hero />
             <Experience />

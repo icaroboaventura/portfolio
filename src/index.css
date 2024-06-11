@@ -4,12 +4,16 @@
 
 @layer base {
   @font-face {
-    font-family: 'arvo-regular';
-    src: url(/public/fonts/Arvo/Arvo-Regular.ttf);
+    font-family: 'opensans-regular';
+    src: url(/public/fonts/Open_Sans/OpenSans-Regular.ttf);
   }
   @font-face {
-    font-family: 'arvo-bold';
-    src: url(/public/fonts/Arvo/Arvo-Bold.ttf);
+    font-family: 'opensans-bold';
+    src: url(/public/fonts/Open_Sans/OpenSans-Bold.ttf);
+  }
+  @font-face {
+    font-family: 'opensans-bold-italic';
+    src: url(/public/fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf);
   }
 }
 

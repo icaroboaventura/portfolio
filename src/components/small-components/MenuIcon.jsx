@@ -15,11 +15,12 @@ const MenuButton = () => {
         animate={toggle ? 'open' : 'closed'}>
         <motion.span
           style={{ top: '35%', left: '50%', x: '-50%', y: '-50%' }}
-          className="absolute h-[3px] w-6 bg-primary rounded"
+          className="absolute h-[4px] w-6 bg-primary"
           variants={{
             open: {
               rotate: ['0deg', '0deg', '45deg'],
               top: ['35%', '50%', '50%'],
+              backgroundColor: '#141E46',
             },
             closed: {
               rotate: ['45deg', '0deg', '0deg'],
@@ -29,19 +30,21 @@ const MenuButton = () => {
         />
         <motion.span
           style={{ top: '50%', left: '50%', x: '-50%', y: '-50%' }}
-          className="absolute  h-[3px] w-6 bg-primary rounded"
+          className="absolute  h-[4px] w-6 bg-primary"
           variants={{
             open: {
               rotate: ['0deg', '0deg', '-45deg'],
             },
+
             closed: {
               rotate: ['-45deg', '0deg', '0deg'],
+              backgroundColor: '#141E46',
             },
           }}
         />
         <motion.span
           style={{ bottom: '35%', left: '50%', x: '-50%', y: '50%' }}
-          className="absolute  h-[3px] w-6 bg-primary rounded"
+          className="absolute  h-[4px] w-6 bg-primary"
           variants={{
             open: {
               rotate: ['0deg', '0deg', '-45deg'],

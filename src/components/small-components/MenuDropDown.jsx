@@ -26,8 +26,8 @@ const MenuDropDown = () => {
               scaleY: 1,
               transition: {
                 duration: 0.3,
-                stiffness: 100,
-                damping: 24,
+                stiffness: 90,
+                // damping: 24,
                 type: 'spring',
               },
             },
@@ -36,16 +36,16 @@ const MenuDropDown = () => {
               damping: 24,
             },
           }}
-          className="sm:hidden border-t-2 border-t-primary w-full top-0 origin-top absolute rounded-b-3xl overflow-hidden flex-col list-none justify-center items-center bg-white">
-          <div>
+          className="sm:hidden w-full top-0 origin-top absolute rounded-b overflow-hidden flex-col list-none justify-center items-center bg-white bg-opacity-95">
+          <ul>
             {navLinks.map((link, i) => (
               <li
                 key={i}
                 className={`${
                   activeSection === link.name ?
-                    'text-white bg-primary'
+                    ' text-white bg-secondary'
                   : 'text-primary'
-                } cursor-pointer w-full text-center p-1 hover:scale-105`}
+                } cursor-pointer w-full text-center p-1 hover:scale-105 text-sm  font-opensans-bold`}
                 onClick={() => {
                   scrollToSection(link.name)
                   setToggle(!toggle)
@@ -53,7 +53,7 @@ const MenuDropDown = () => {
                 <Link to={'/'}>{link.name}</Link>
               </li>
             ))}
-          </div>
+          </ul>
         </motion.div>
       )}
     </AnimatePresence>
