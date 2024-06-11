@@ -7,7 +7,6 @@ function TitleThree() {
   const { nodes } = useGLTF('/models/frontend.glb')
   const { size } = useThree()
 
-  // Adjust the scale based on the width of the window
   const scale = size.width / 130
 
   return (
